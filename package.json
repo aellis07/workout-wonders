@@ -1,0 +1,25 @@
+{
+  "name": "workout-wonders",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aellis07/workout-wonders.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aellis07/workout-wonders/issues"
+  },
+  "homepage": "https://github.com/aellis07/workout-wonders#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
