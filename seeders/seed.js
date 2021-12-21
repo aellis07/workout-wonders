@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 // Required workoutModle.js
 const db = require("../models");
 // Connect MongoDB to seed file
-mongoose.connect("mongodb://localhost/workoutdb", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
