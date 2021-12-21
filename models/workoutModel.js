@@ -1,8 +1,13 @@
 const mongoose = require("mongoose");
 
+// Calling mongose
 const Schema = mongoose.Schema;
+
+// Creating a new schema
 const workoutSchema = new Schema({
+  // Creating a collection
   exercise: [
+    // Creating fields with different data types
     {
       type: {
         type: String,
@@ -38,5 +43,6 @@ const workoutSchema = new Schema({
   },
 });
 
+// Turning the schema into a model to be exported
 const Workout = mongoose.model("Workout", workoutSchema);
 module.exports = Workout;
