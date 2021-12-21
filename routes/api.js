@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Workout = require("../models/workoutModel.js");
 const { route } = require("./htmlRoutes.js");
 
+// Creating a new workout
 router.post("/workouts", (req, res) => {
   Workout.create({})
     .then((workout) => {
@@ -11,11 +12,14 @@ router.post("/workouts", (req, res) => {
       res.json(err);
     });
 });
+
+// Getting the total duration of a workout
 router.get("/workouts", (req, res) => {
   Workout.aggregate([
     {
       $addFields: {
         totalDuration: {
+          // Over all time spent exercising
           $sum: "$exercise.duration",
         },
       },
@@ -30,6 +34,7 @@ router.get("/workouts", (req, res) => {
     });
 });
 
+// Finding a specific workout
 router.put("/workouts/:id", (req, res) => {
   console.log("PARAMS", req.params);
   Workout.findByIdAndUpdate(
@@ -44,6 +49,8 @@ router.put("/workouts/:id", (req, res) => {
       res.json(e);
     });
 });
+
+// Sum of duration and weight over the past 7 workouts
 router.get("/workouts/range", (req, res) => {
   Workout.aggregate([
     {
@@ -53,7 +60,8 @@ router.get("/workouts/range", (req, res) => {
       },
     },
   ])
-    .limit(10)
+    // Limits the aggregation to only 7 values
+    .limit(7)
     .then((workout) => {
       console.log(workout);
       res.json(workout);
