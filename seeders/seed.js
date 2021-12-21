@@ -1,7 +1,7 @@
 // Required MongoDB
-// Required workoutModle.js
 const mongoose = require("mongoose");
-const db = require("../models/workoutModel.js");
+// Required workoutModle.js
+const db = require("../models");
 // Connect MongoDB to seed file
 mongoose.connect("mongodb://localhost/workoutdb", {
   useNewUrlParser: true,
@@ -12,33 +12,6 @@ mongoose.connect("mongodb://localhost/workoutdb", {
 // Data that will be seeded into the MongoDB
 // workoutSeed array that has exercise objects
 const workoutSeed = [
-  {
-    day: new Date(new Date().setDate(new Date().getDate() - 9)),
-    //
-    exercise: [
-      {
-        type: "resistance",
-        name: "Bicep Curl",
-        duration: 20,
-        weight: 100,
-        reps: 10,
-        sets: 4,
-      },
-    ],
-  },
-  {
-    day: new Date(new Date().setDate(new Date().getDate() - 8)),
-    exercise: [
-      {
-        type: "resistance",
-        name: "Lateral Pull",
-        duration: 20,
-        weight: 300,
-        reps: 10,
-        sets: 4,
-      },
-    ],
-  },
   {
     day: new Date(new Date().setDate(new Date().getDate() - 7)),
     exercise: [
@@ -130,8 +103,8 @@ const workoutSeed = [
   },
 ];
 
-db.deleteMany({})
-  .then(() => db.collection.insertMany(workoutSeed))
+db.Workout.deleteMany({})
+  .then(() => db.Workout.collection.insertMany(workoutSeed))
   .then((data) => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
