@@ -13,7 +13,7 @@ This project is licensed by: MIT
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Screenshots](#screenshots)
-- [Technology](#technologies)
+- [Technologies](#technologies)
 - [Contact](#contact)
 
 ## Installation
