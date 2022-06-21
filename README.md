@@ -13,7 +13,7 @@ This project is licensed by: MIT
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Screenshots](#screenshots)
-- [Technology](#technology)
+- [Technology](#technologies)
 - [Contact](#contact)
 
 ## Installation
@@ -41,7 +41,7 @@ Start by either creating a new workout or updating your current one. Next, choos
 
 ![alt text](./screenshots/workout-wonders.herokuapp.com_stats.png)
 
-## Technology
+## Technologies
 
 - express.js
 - mongo.js
